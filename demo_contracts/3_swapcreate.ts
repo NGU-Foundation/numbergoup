@@ -19,6 +19,7 @@ const swapTemplate: DeployFunction<Settings> = async (
     initialFields: {
       owner: "16gAmGuCysLjGxHK8TUENkvhbqvwZRb6BabUbsxLYkSkd",
       contract: "contract",
+      numswaps: 0n,
       paca: "23ced1fcda7fb1f53641dc299cf49b12a89338c80d05534fc5b366d5b65acd02",
       ngu: "c4d0eca28076ad888751518000396745680af4d2949dc64170a1c596c136e501",
       pacafee: 100000n, // 4 decimals (10 $PACA)

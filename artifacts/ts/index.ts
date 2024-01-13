@@ -2,6 +2,8 @@
 /* tslint:disable */
 /* eslint-disable */
 
+export * from "./Auction";
+export * from "./Bidder";
 export * from "./BurnToken";
 export * from "./CreateToken";
 export * from "./Createswap";

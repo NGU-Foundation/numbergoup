@@ -32,6 +32,7 @@ export namespace CreateswapTypes {
   export type Fields = {
     owner: Address;
     contract: HexString;
+    numswaps: bigint;
     paca: HexString;
     ngu: HexString;
     pacafee: bigint;
@@ -47,13 +48,7 @@ export namespace CreateswapTypes {
     tokenw: HexString;
     amtw: bigint;
     contract: HexString;
-  }>;
-  export type LendEvent = ContractEvent<{
-    tokeno: HexString;
-    amto: bigint;
-    tokenw: HexString;
-    amtw: bigint;
-    contract: HexString;
+    addy: Address;
   }>;
   export type DestroyEvent = ContractEvent<{ who: Address }>;
 
@@ -105,7 +100,7 @@ class Factory extends ContractFactory<
     return this.contract.getInitialFieldsWithDefaultValues() as CreateswapTypes.Fields;
   }
 
-  eventIndex = { Swap: 0, Lend: 1, Destroy: 2 };
+  eventIndex = { Swap: 0, Destroy: 1 };
   consts = { ErrorCodes: { InvalidCaller: BigInt(1) } };
 
   at(address: string): CreateswapInstance {
@@ -231,7 +226,7 @@ export const Createswap = new Factory(
   Contract.fromJson(
     CreateswapContractJson,
     "",
-    "ee0d422da610ac195fa99322c2f527d854564158ca5f95ff42118600653fa585"
+    "ad8f5ec343e21685aa8c57e265d0ee8875140730620ad2ff501e3f15f808e01a"
   )
 );
 
@@ -262,19 +257,6 @@ export class CreateswapInstance extends ContractInstance {
     );
   }
 
-  subscribeLendEvent(
-    options: EventSubscribeOptions<CreateswapTypes.LendEvent>,
-    fromCount?: number
-  ): EventSubscription {
-    return subscribeContractEvent(
-      Createswap.contract,
-      this,
-      options,
-      "Lend",
-      fromCount
-    );
-  }
-
   subscribeDestroyEvent(
     options: EventSubscribeOptions<CreateswapTypes.DestroyEvent>,
     fromCount?: number
@@ -290,9 +272,7 @@ export class CreateswapInstance extends ContractInstance {
 
   subscribeAllEvents(
     options: EventSubscribeOptions<
-      | CreateswapTypes.SwapEvent
-      | CreateswapTypes.LendEvent
-      | CreateswapTypes.DestroyEvent
+      CreateswapTypes.SwapEvent | CreateswapTypes.DestroyEvent
     >,
     fromCount?: number
   ): EventSubscription {

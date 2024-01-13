@@ -11,6 +11,8 @@ import {
   SignerProvider,
   HexString,
 } from "@alephium/web3";
+import { default as AuctionEndScriptJson } from "../auction/AuctionEnd.ral.json";
+import { default as BidScriptJson } from "../auction/Bid.ral.json";
 import { default as BuildtokenScriptJson } from "../createtoken/Buildtoken.ral.json";
 import { default as BurnScriptJson } from "../burn/Burn.ral.json";
 import { default as BuyvirlScriptJson } from "../ico/Buyvirl.ral.json";
@@ -35,10 +37,17 @@ import { default as SendoutScriptJson } from "../faucet/Sendout.ral.json";
 import { default as SubdestroyScriptJson } from "../subscribe/Subdestroy.ral.json";
 import { default as TopupScriptJson } from "../faucet/Topup.ral.json";
 import { default as UpdatedevfeeScriptJson } from "../subscribe/Updatedevfee.ral.json";
+import { default as WithdrawScriptJson } from "../auction/Withdraw.ral.json";
 import { default as WithdrawdevScriptJson } from "../subscribe/Withdrawdev.ral.json";
 import { default as WithdrawlassetsScriptJson } from "../scripts/Withdrawlassets.ral.json";
 import { default as WithdrawplatformScriptJson } from "../subscribe/Withdrawplatform.ral.json";
 
+export const AuctionEnd = new ExecutableScript<{ auction: HexString }>(
+  Script.fromJson(AuctionEndScriptJson)
+);
+export const Bid = new ExecutableScript<{ auction: HexString; amount: bigint }>(
+  Script.fromJson(BidScriptJson)
+);
 export const Buildtoken = new ExecutableScript<{
   contract: HexString;
   symbol: HexString;
@@ -140,6 +149,9 @@ export const Updatedevfee = new ExecutableScript<{
   contract: HexString;
   newfee: bigint;
 }>(Script.fromJson(UpdatedevfeeScriptJson));
+export const Withdraw = new ExecutableScript<{ auction: HexString }>(
+  Script.fromJson(WithdrawScriptJson)
+);
 export const Withdrawdev = new ExecutableScript<{ contract: HexString }>(
   Script.fromJson(WithdrawdevScriptJson)
 );

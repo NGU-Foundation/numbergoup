@@ -1,5 +1,5 @@
 {
-  "fullNodeVersion": "v2.5.9",
+  "fullNodeVersion": "v2.5.7",
   "compilerOptionsUsed": {
     "ignoreUnusedConstantsWarnings": false,
     "ignoreUnusedVariablesWarnings": false,
@@ -9,6 +9,34 @@
     "ignoreCheckExternalCallerWarnings": false
   },
   "infos": {
+    "Auction": {
+      "sourceFile": "auction/auction.ral",
+      "sourceCodeHash": "c79b8a7ade94442af54688ff5ad9c7b6902281f3da0e7ab1df24aa8004ddd0de",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "6f45e2992040f7ef9b6e4ced2b3e9fd30c9611f72533b51dc886296dee420ffb",
+      "warnings": []
+    },
+    "AuctionEnd": {
+      "sourceFile": "auction/tx_auctionend.ral",
+      "sourceCodeHash": "6175f5fb6babccb317ae5c41a2cde3bdda5e426fed2d0e1357a67541d4464a15",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
+      "warnings": []
+    },
+    "Bid": {
+      "sourceFile": "auction/tx_auctionbid.ral",
+      "sourceCodeHash": "db490703c706c29d7213ddd651ac6a03808ac3450fff29bf68061fe22fd6fb48",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
+      "warnings": []
+    },
+    "Bidder": {
+      "sourceFile": "auction/bidder.ral",
+      "sourceCodeHash": "bb21fc798a047fdf6d5df61116fb68f7f877f825d9fd7082d5e6ae08b4c50674",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "0f31c5db9706970d0f12be335dd9837f0e7c9ec257f4b64f668207aa449ae6ce",
+      "warnings": []
+    },
     "Buildtoken": {
       "sourceFile": "createtoken/tx_make_token_alph.ral",
       "sourceCodeHash": "df52d82dbc61c93fa7620ed0c47786ca5e0252830209092086345e30419aab5a",
@@ -60,9 +88,9 @@
     },
     "Createswap": {
       "sourceFile": "swaps/createswap.ral",
-      "sourceCodeHash": "d94737803d31ecd600e5d07eeeece044ef3c400bb98a64b3f4062a14f7aa336a",
+      "sourceCodeHash": "6d41e2e8834f9f5f084555511563f68e347234b0abe41f365224d647b87fd837",
       "bytecodeDebugPatch": "",
-      "codeHashDebug": "ee0d422da610ac195fa99322c2f527d854564158ca5f95ff42118600653fa585",
+      "codeHashDebug": "ad8f5ec343e21685aa8c57e265d0ee8875140730620ad2ff501e3f15f808e01a",
       "warnings": []
     },
     "Createswapalph": {
@@ -245,6 +273,13 @@
       "sourceCodeHash": "a45282df7ae0cc47e050ff91c8a5987c68a454a0d198cc6e6d34882ad04154ee",
       "bytecodeDebugPatch": "",
       "codeHashDebug": "d87d6c74c21a7bec6cba00e9a0388ca81c5a71518b8efb77f43b5160cfdd4456",
+      "warnings": []
+    },
+    "Withdraw": {
+      "sourceFile": "auction/tx_withdraw.ral",
+      "sourceCodeHash": "30c784e4006548ab46bfa8f3548d252b8677279e83a8b6a03a9afcca02b7e81f",
+      "bytecodeDebugPatch": "",
+      "codeHashDebug": "",
       "warnings": []
     },
     "Withdrawdev": {

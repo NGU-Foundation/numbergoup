@@ -1,15 +1,18 @@
 {
   "version": "v2.5.7",
-  "name": "ConfirmSwap",
-  "bytecodeTemplate": "010103000200120c0d{0}010217000c0d{0}01031701b416001601a30c0c{0}0105",
+  "name": "Bid",
+  "bytecodeTemplate": "0101030000000bb4{1}13c40de0b6b3a76400002aa2b4{1}0e0c{0}0101",
   "fieldsSig": {
     "names": [
-      "contract"
+      "auction",
+      "amount"
     ],
     "types": [
-      "ByteVec"
+      "ByteVec",
+      "U256"
     ],
     "isMutable": [
+      false,
       false
     ]
   },
