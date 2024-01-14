@@ -7,12 +7,16 @@ Contract Swap (
     tamount: U256,                                  // amount of that token
     owner: Address,                                 // creator of swap
     feealph: U256,                                  // fee alph
-    dev: Address
+    parentcontract: Address                         // parent contract
 ) {
     // Events
     event Success(id: ByteVec, tone: ByteVec, aone: U256, ttwo: ByteVec, atwo: U256)
     event Cancel(id: ByteVec)
     event Edit(id: ByteVec, ttwo: ByteVec, atwo: U256) // Can only edit the token / amount requested
+
+    enum ErrorCodes {
+        InvalidCaller = 1
+    }
 
     // Public Functions
     pub fn getToken() -> ByteVec {
@@ -40,11 +44,11 @@ Contract Swap (
     pub fn confirmswap() -> () {
 
         // Transfer Caller Assets  -> Owner
-        transferToken!(callerAddress!(), getOwner(), getTradeToken(), getTAmount()) // Caller Sends Assets to Owner
+        transferToken!(callerAddress!(), selfAddress!(), getTradeToken(), getTAmount()) // Caller Sends Assets to Contract
         // Transfer Owner Assets -> Caller
         transferToken!(selfAddress!(), callerAddress!(), getToken(), getAmount()) // Contract send Owners assets to Caller
 
-        transferToken!(callerAddress!(), dev, ALPH, feealph) // alph fee collection
+        transferToken!(callerAddress!(), parentcontract, ALPH, feealph) // alph fee collection
 
         // Contract is finalized
         destroySelf!(owner)
@@ -55,6 +59,8 @@ Contract Swap (
 
     @using(preapprovedAssets = false, assetsInContract = true, updateFields = false, checkExternalCaller = false)
     pub fn cancelswap() -> () {
+
+        assert!(owner == callerAddress!(), ErrorCodes.InvalidCaller)
 
         // Call Destroy
         destroySelf!(owner)

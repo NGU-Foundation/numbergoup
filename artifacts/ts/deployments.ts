@@ -11,6 +11,8 @@ import {
   BurnTokenInstance,
   Swap,
   SwapInstance,
+  Createswap,
+  CreateswapInstance,
 } from ".";
 import { default as mainnetDeployments } from "../.deployments.mainnet.json";
 import { default as testnetDeployments } from "../.deployments.testnet.json";
@@ -21,6 +23,7 @@ export type Deployments = {
     Subscribe: DeployContractExecutionResult<SubscribeInstance>;
     BurnToken: DeployContractExecutionResult<BurnTokenInstance>;
     Swap?: DeployContractExecutionResult<SwapInstance>;
+    Createswap?: DeployContractExecutionResult<CreateswapInstance>;
   };
 };
 
@@ -45,6 +48,15 @@ function toDeployments(json: any): Deployments {
             ...json.contracts["Swap"],
             contractInstance: Swap.at(
               json.contracts["Swap"].contractInstance.address
+            ),
+          },
+    Createswap:
+      json.contracts["Createswap"] === undefined
+        ? undefined
+        : {
+            ...json.contracts["Createswap"],
+            contractInstance: Createswap.at(
+              json.contracts["Createswap"].contractInstance.address
             ),
           },
   };

@@ -48,7 +48,7 @@ export namespace CreateswapTypes {
     tokenw: HexString;
     amtw: bigint;
     contract: HexString;
-    addy: Address;
+    conaddy: Address;
   }>;
   export type DestroyEvent = ContractEvent<{ who: Address }>;
 
@@ -226,7 +226,7 @@ export const Createswap = new Factory(
   Contract.fromJson(
     CreateswapContractJson,
     "",
-    "ad8f5ec343e21685aa8c57e265d0ee8875140730620ad2ff501e3f15f808e01a"
+    "67341a36a2aaf4d3fca8ecabc2026385675012a9be274c2ea643b2030475ab5c"
   )
 );
 

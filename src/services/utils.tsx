@@ -11,22 +11,18 @@ export interface BurnToken {
   tokenId: string
 }
 
-// !NEED TO BE CONFIGURED
 export interface SwapTemplate {
   network: NetworkId
   groupIndex: number
   contractAddress: string           // Contract Addy
-  contractId: string                // Contract Collects Fees, Takes Player With Highest Score
-  tokenId: string                   // Burns $PACA or uses PACA to upgrade skills
+  contractId: string                // Contract Collects Fees
 }
 
-// !NEED TO BE CONFIGURED
 export interface Swap {
   network: NetworkId
   groupIndex: number
   contractAddress: string           // Contract Addy
-  contractId: string                // Contract Collects Fees, Takes Player With Highest Score
-  tokenId: string   
+  contractId: string                // Contract Collects Fees
 }
 
 export interface SubscribeConfig {
@@ -76,6 +72,28 @@ function getSubscribeConfig(): SubscribeConfig {
   return { network, groupIndex, subscribeAddress, subscribeID, nguID }
 }
 
+// Swap Config
+function getSwapCreateConfig(): Swap {
+  const network = getNetwork()
+  const groupIndex = 0
+  //const swapCreateContract = loadDeployments(network).contracts.Createswap.contractInstance
+  const contractAddress = "yu8PMB2yjLgkev6CCpW9xqeaS6f6rxM8XBA4EaSSoM1H"
+  const contractId = "4d6905422c3fbb6e404d8ac1af9564098e6c00eff888a1f1fddc6e9960932900"
+  return { network, groupIndex, contractAddress, contractId}
+}
+
+// SwapTemplate Config
+function getSwapConfig(): SwapTemplate {
+  const network = getNetwork()
+  const groupIndex = 0
+  //const swapCreateContract = loadDeployments(network).contracts.Createswap.contractInstance
+  const contractAddress = "27PPU1hff2k1e6zRBkzthreo968bNpAAbKv2RiicjUr8F"
+  const contractId = "bca824a657e7e7802b88468ab05ec6add6ace29043762ca05217c514406de600"
+  return { network, groupIndex, contractAddress, contractId}
+}
+
 // Exports
 export const TokenBurnConfig = getTokenBurnConfig()
 export const SubscribeConfig = getSubscribeConfig()
+export const SwapCreateConfig = getSwapCreateConfig()
+export const SwapConfig = getSwapConfig()

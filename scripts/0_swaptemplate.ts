@@ -17,13 +17,13 @@ const swapTemplate: DeployFunction<Settings> = async (
   const result = await deployer.deployContract(Swap, {
     // The initial states of the swap template contract
     initialFields: {
-      token: "c4d0eca28076ad888751518000396745680af4d2949dc64170a1c596c136e501",
-      amount: 10000000000000n,
-      tradetoken: "c4d0eca28076ad888751518000396745680af4d2949dc64170a1c596c136e501",
-      tamount: 1000000000000n,
+      token: "",
+      amount: 0n,
+      tradetoken: "",
+      tamount: 0n,
       owner: "16gAmGuCysLjGxHK8TUENkvhbqvwZRb6BabUbsxLYkSkd",
-      feealph: 10000000000000000n, // 0.01 alph
-      dev: "16gAmGuCysLjGxHK8TUENkvhbqvwZRb6BabUbsxLYkSkd"
+      feealph: 0n, // 0.01 alph
+      parentcontract: "16gAmGuCysLjGxHK8TUENkvhbqvwZRb6BabUbsxLYkSkd" // replace with parent contract
     }
   })
   console.log('Swap contract id: ' + result.contractInstance.contractId)

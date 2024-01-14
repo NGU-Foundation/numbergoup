@@ -11,7 +11,7 @@ Contract Createswap (
     mut ngufee: U256                                     // $NGU Fee
 ) {
     // Events
-    event Swap(tokeno: ByteVec, amto: U256, tokenw: ByteVec, amtw: U256, contract: ByteVec, addy: Address)
+    event Swap(tokeno: ByteVec, amto: U256, tokenw: ByteVec, amtw: U256, contract: ByteVec, conaddy: Address)
     event Destroy(who: Address)
 
     // Error Codes
@@ -51,7 +51,7 @@ Contract Createswap (
         
         let minter = callerAddress!()
 
-        let (encodeImmutableFields, encodeMutableFields) = Swap.encodeFields!(tokenOffered, tokenOfferedAmt, tokenWanted, tokenWantedAmt, minter, alphfee, owner)
+        let (encodeImmutableFields, encodeMutableFields) = Swap.encodeFields!(tokenOffered, tokenOfferedAmt, tokenWanted, tokenWantedAmt, minter, alphfee, selfAddress!())
 
         let contractID = copyCreateSubContract!{minter -> ALPH: 1 alph, tokenOffered: tokenOfferedAmt}(
             toByteVec!(numswaps),

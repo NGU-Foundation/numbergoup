@@ -1,8 +1,8 @@
 {
-  "version": "v2.5.7",
+  "version": "v2.5.9",
   "name": "Swap",
-  "bytecode": "070709121b4024402d40564062010000000102ce0002010000000102ce0102010000000102ce0202010000000102ce0302010000000102ce0402010100000017b4000400020003aab2b400000001aab4ce06ce05a7ce04b005b1000000010002000373010200000005ce04b006b15e",
-  "codeHash": "f5b78061c50a1d1c61861a43961186bf1d7a8520de8faa2eb730ece6cd886a9f",
+  "bytecode": "070709121b4024402d40554067010000000102ce0002010000000102ce0102010000000102ce0202010000000102ce0302010000000102ce0402010100000017b4b200020003aab2b400000001aab4ce06ce05a7ce04b005b100000001000200037301020000000ace04b4450d7bce04b006b15e",
+  "codeHash": "dc11c6e3165bbe3d712ee1f2485e71a07839fa3694b71b76c318f13fe1e0f61f",
   "fieldsSig": {
     "names": [
       "token",
@@ -11,7 +11,7 @@
       "tamount",
       "owner",
       "feealph",
-      "dev"
+      "parentcontract"
     ],
     "types": [
       "ByteVec",
@@ -156,5 +156,18 @@
     }
   ],
   "constants": [],
-  "enums": []
+  "enums": [
+    {
+      "name": "ErrorCodes",
+      "fields": [
+        {
+          "name": "InvalidCaller",
+          "value": {
+            "type": "U256",
+            "value": "1"
+          }
+        }
+      ]
+    }
+  ]
 }

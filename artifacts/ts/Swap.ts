@@ -36,7 +36,7 @@ export namespace SwapTypes {
     tamount: bigint;
     owner: Address;
     feealph: bigint;
-    dev: Address;
+    parentcontract: Address;
   };
 
   export type State = ContractState<Fields>;
@@ -97,6 +97,7 @@ class Factory extends ContractFactory<SwapInstance, SwapTypes.Fields> {
   }
 
   eventIndex = { Success: 0, Cancel: 1, Edit: 2 };
+  consts = { ErrorCodes: { InvalidCaller: BigInt(1) } };
 
   at(address: string): SwapInstance {
     return new SwapInstance(address);
@@ -146,7 +147,7 @@ export const Swap = new Factory(
   Contract.fromJson(
     SwapContractJson,
     "",
-    "f5b78061c50a1d1c61861a43961186bf1d7a8520de8faa2eb730ece6cd886a9f"
+    "dc11c6e3165bbe3d712ee1f2485e71a07839fa3694b71b76c318f13fe1e0f61f"
   )
 );
 
