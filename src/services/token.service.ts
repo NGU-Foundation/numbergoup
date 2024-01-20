@@ -1,6 +1,6 @@
 
 import { DUST_AMOUNT, ExecutableScript, ExecuteScriptResult, SignerProvider, contractIdFromAddress } from '@alephium/web3'
-import { Topup, Sendout, Destroy, Buildtoken, Gettoken, Editfee, Destroytoken, Burn, Deposit, Destroyburn, Subdestroy, Updatedevfee, Withdrawdev, Withdrawplatform } from '../../artifacts/ts/scripts'
+import { Topup, Sendout, Destroy, Buildtoken, Gettoken, Editfee, Destroytoken, Burn, Deposit, Destroyburn, Subdestroy, Updatedevfee, Withdrawdev, Withdrawplatform, Destroycreate } from '../../artifacts/ts/scripts'
 import { TokenBurnConfig, SubscribeConfig } from './utils'
 import { BurnToken, Faucet } from 'artifacts/ts'
 import * as web3 from '@alephium/web3'
@@ -92,6 +92,19 @@ export const SubscribeWithdrawPlatformContract = async (
     attoAlphAmount: DUST_AMOUNT
   })
 }
+
+/*
+export const DestroyTokenCreate = async (
+  signerProvider: SignerProvider
+): Promise<ExecuteScriptResult> => {
+  return await Destroytoken.execute(signerProvider, {
+    initialFields: {
+      contract: "bb696eaaede2429066c053ca9c5a8d767eb8817a868e40035b4f25884ae76400"
+    },
+    attoAlphAmount: DUST_AMOUNT
+  })
+}
+*/
 
 //? End of Subscription Services
 

@@ -34,7 +34,7 @@ export interface SubscribeConfig {
 }
 
 export function getNetwork(): NetworkId {
-  const network = (process.env.NEXT_PUBLIC_NETWORK ?? 'testnet') as NetworkId
+  const network = (process.env.NEXT_PUBLIC_NETWORK ?? 'mainnet') as NetworkId
   return network
 }
 

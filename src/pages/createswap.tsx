@@ -20,11 +20,14 @@ import { SubscribeConfig } from '@/services/utils';
 //const API_KEY = "q4YJcksGa1ISzWPspxpSlKppgoHzodnpyWANx8nxtsUIFhtJ";
 //const nodeProvider = new NodeProvider('http://98.227.84.182:12973', API_KEY);
 
-export default function Swaps() {
+export default function CreateSwaps() {
 
   return (
-      <div>
+      <div> 
         <Navbar></Navbar>
+        <br/>
+        <AlephiumConnectButton></AlephiumConnectButton>
+        <SwapCreateAutomation config={SubscribeConfig}/>
       </div>
   )
 }

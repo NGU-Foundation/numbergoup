@@ -25,6 +25,7 @@ import { default as DepositScriptJson } from "../subscribe/Deposit.ral.json";
 import { default as DestroyScriptJson } from "../faucet/Destroy.ral.json";
 import { default as DestroyTokenSwapScriptJson } from "../swaps/DestroyTokenSwap.ral.json";
 import { default as DestroyburnScriptJson } from "../burn/Destroyburn.ral.json";
+import { default as DestroycreateScriptJson } from "../createtoken/Destroycreate.ral.json";
 import { default as DestroytokenScriptJson } from "../createtoken/Destroytoken.ral.json";
 import { default as EditfeeScriptJson } from "../scripts/Editfee.ral.json";
 import { default as FeeAlphScriptJson } from "../swaps/FeeAlph.ral.json";
@@ -102,6 +103,9 @@ export const DestroyTokenSwap = new ExecutableScript<{ contract: HexString }>(
 );
 export const Destroyburn = new ExecutableScript<{ contract: HexString }>(
   Script.fromJson(DestroyburnScriptJson)
+);
+export const Destroycreate = new ExecutableScript<{ contract: HexString }>(
+  Script.fromJson(DestroycreateScriptJson)
 );
 export const Destroytoken = new ExecutableScript<{ contract: HexString }>(
   Script.fromJson(DestroytokenScriptJson)

@@ -52,7 +52,7 @@ export const SubscribeAutomation: FC<{
       <div style={{color: 'black'}} >
         <form onSubmit={handleSubscribe} style={{alignContent: 'center', textAlign: 'center'}}>
           <>
-            <h2 className={styles.title} style={{color: 'black', textAlign: 'center'}}> Alephium NGU Signals {/*({config.network})*/}</h2>
+            <h2 className={styles.title} style={{color: 'black', textAlign: 'center'}}> Alephium NGU Signals ({config.network})</h2>
             {/*<p>PublicKey: {context.account?.publicKey ?? '???'}</p>*/}
             <p style={{color: 'black', textAlign: 'center'}}> 777 NGU for signals. </p>
             <p style={{color: 'black', textAlign: 'center'}}> Please be patient as we process your request, and allow at least 1-2 hours. </p>

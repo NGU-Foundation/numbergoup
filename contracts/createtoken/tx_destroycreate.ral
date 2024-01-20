@@ -1,0 +1,5 @@
+TxScript Destroycreate (
+    contract: CreateToken
+) {
+    contract.destroycreator()
+}
